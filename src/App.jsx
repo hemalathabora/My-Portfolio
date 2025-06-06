@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import AboutTimeline from './components/AboutTimeline';
+import AboutTimeline from './components/AboutTimeLine';
 import ProjectCard from './components/ProjectCard';
 import SkillsSection from './components/SkillsSection';
 import ContactForm from './components/ContactForm';
