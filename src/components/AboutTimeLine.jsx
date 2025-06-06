@@ -1,4 +1,4 @@
-import './AboutTimeline.css';
+import './AboutTimeLine.css';
 
 export default function AboutTimeline() {
   const timelineData = [
