@@ -1,0 +1,116 @@
+/* src/components/ContactForm.css */
+
+.contact-section {
+  padding: 4rem 2rem;
+  background: url('/assets/contact-bg.jpg') no-repeat center/cover;
+  color: white;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #007bff;
+  text-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.glass-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: box-shadow 0.4s, background 0.4s;
+}
+
+.glass-form:focus-within {
+  box-shadow: 0 12px 40px rgba(0, 123, 255, 0.18);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.glass-form input,
+.glass-form textarea {
+  margin: 0.5rem 0;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  background: #f9fbfd;
+  color: #222; /* <-- Change this from white to dark */
+}
+
+.glass-form input:focus,
+.glass-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.13);
+  background: #fff;
+}
+
+.glass-form button {
+  margin-top: 1rem;
+  padding: 0.9rem 0;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.07);
+}
+
+.glass-form button:hover,
+.glass-form button:focus {
+  background: #0056b3;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.18);
+}
+
+.thankyou-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s;
+}
+
+.thankyou-content {
+  background: #fff;
+  color: #007bff;
+  font-size: 1.3rem;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 123, 255, 0.13);
+  text-align: center;
+  animation: popupScale 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes popupScale {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}

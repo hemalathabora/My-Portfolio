@@ -1,0 +1,157 @@
+/* Navbar container */
+.navbar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 123, 255, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* Navbar inner layout */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo text */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+/* Desktop navigation menu */
+.nav-menu {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.nav-menu li a {
+  color: #222;
+  font-weight: 500;
+  font-size: 1.08rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition:
+    background 0.25s cubic-bezier(.4,2,.6,1),
+    color 0.18s,
+    transform 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-menu li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
+  transition: width 0.3s cubic-bezier(.4,2,.6,1), left 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+  background: #e3f0ff;
+  color: #007bff;
+  transform: translateY(-2px) scale(1.07);
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a:focus::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Hamburger button (mobile only) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #007bff;
+  margin-left: 1.2rem;
+  transition: color 0.2s;
+}
+
+.hamburger:focus {
+  outline: 2px solid #007bff;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 0.7rem 1rem;
+  }
+  .nav-menu {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.09);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    z-index: 99;
+    animation: slideDown 0.3s;
+  }
+  .mobile-menu li {
+    text-align: center;
+  }
+  .mobile-menu li a {
+    color: #007bff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0.7rem 0;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-menu li a:hover,
+  .mobile-menu li a:focus {
+    background: #e3f0ff;
+    color: #0056b3;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
