@@ -1,9 +1,33 @@
 // src/components/ContactForm.jsx
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import './ContactForm.css';
 
 export default function ContactForm() {
   const [showPopup, setShowPopup] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,8 +37,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className={`contact-section ${isVisible ? 'reveal' : ''}`} ref={sectionRef}>
       <h2>Contact Me</h2>
+      <p>Have a project in mind or just want to chat? I'd love to hear from you.</p>
       <form className="glass-form" onSubmit={handleSubmit}>
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />

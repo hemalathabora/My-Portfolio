@@ -1,0 +1,235 @@
+/* ================================
+   Social Links Footer Section
+   ================================ */
+
+.social-section {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7f8 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.social-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ================================
+   Content Area
+   ================================ */
+
+.social-content {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.social-content.reveal {
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.social-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f1f1f;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.social-content p {
+  font-size: 1.05rem;
+  color: #5f6368;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Icon Links Container
+   ================================ */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.social-links.reveal {
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+/* ================================
+   Individual Icon Link
+   ================================ */
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-icon-link:hover {
+  transform: translateY(-2px);
+  border-color: #7c8ba3;
+  background-color: #f9fafb;
+  box-shadow: 0 8px 20px rgba(124, 139, 163, 0.15);
+}
+
+/* ================================
+   React Icons (SVG)
+   ================================ */
+
+.social-icon {
+  font-size: 26px;
+  color: #1f1f1f;
+  transition: color 0.3s ease;
+}
+
+.social-icon-link:hover .social-icon {
+  color: #000000;
+}
+
+/* ================================
+   Footer Text
+   ================================ */
+
+.social-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.social-footer.reveal {
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.social-footer p {
+  font-size: 0.95rem;
+  color: #7c8ba3;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ================================
+   Animation
+   ================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   Tablet & Below
+   ================================ */
+
+@media (max-width: 1023px) {
+  .social-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .social-content {
+    margin-bottom: 2.5rem;
+  }
+
+  .social-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .social-content p {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+  }
+
+  .social-icon-link {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon {
+    font-size: 24px;
+  }
+
+  .social-footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .social-footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================================
+   Mobile
+   ================================ */
+
+@media (max-width: 640px) {
+  .social-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .social-content {
+    margin-bottom: 2rem;
+  }
+
+  .social-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .social-links {
+    gap: 1.25rem;
+    margin: 2rem 0;
+  }
+
+  .social-icon-link {
+    width: 46px;
+    height: 46px;
+  }
+
+  .social-icon {
+    font-size: 22px;
+  }
+
+  .social-footer {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+  }
+
+  .social-footer p {
+    font-size: 0.85rem;
+  }
+}

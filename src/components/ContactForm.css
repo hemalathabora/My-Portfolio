@@ -1,76 +1,108 @@
 /* src/components/ContactForm.css */
 
 .contact-section {
-  padding: 4rem 2rem;
-  background: url('/assets/contact-bg.jpg') no-repeat center/cover;
-  color: white;
+  padding: 80px 2rem;
+  background: linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%);
+  color: #1a1a1a;
   text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contact-section.reveal {
+  animation: contactReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes contactReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-section h2 {
-  color: #007bff;
-  text-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
-  letter-spacing: 1px;
+  color: #1a1a1a;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   margin-bottom: 1.5rem;
+}
+
+.contact-section > p {
+  color: #4a4a4a;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
 }
 
 .glass-form {
   max-width: 500px;
   margin: 2rem auto;
   padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  transition: box-shadow 0.4s, background 0.4s;
+  transition: all 0.4s ease;
 }
 
 .glass-form:focus-within {
-  box-shadow: 0 12px 40px rgba(0, 123, 255, 0.18);
-  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(124, 139, 163, 0.2);
 }
 
 .glass-form input,
 .glass-form textarea {
   margin: 0.5rem 0;
   padding: 0.9rem 1rem;
-  border: 1.5px solid #e0e0e0;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: all 0.4s ease;
   outline: none;
-  background: #f9fbfd;
-  color: #222; /* <-- Change this from white to dark */
+  background: #fafbfc;
+  color: #1a1a1a;
+  font-family: inherit;
+}
+
+.glass-form input::placeholder,
+.glass-form textarea::placeholder {
+  color: #4a4a4a;
 }
 
 .glass-form input:focus,
 .glass-form textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.13);
-  background: #fff;
+  border-color: #7c8ba3;
+  box-shadow: 0 0 0 3px rgba(124, 139, 163, 0.08);
+  background: #ffffff;
 }
 
 .glass-form button {
   margin-top: 1rem;
-  padding: 0.9rem 0;
-  background: #007bff;
-  color: #fff;
-  border: none;
+  padding: 0.95rem 0;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.07);
+  transition: all 0.4s ease;
+  letter-spacing: 0.3px;
 }
 
 .glass-form button:hover,
 .glass-form button:focus {
-  background: #0056b3;
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.18);
+  background: #4a4a4a;
+  border-color: #4a4a4a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .thankyou-popup {

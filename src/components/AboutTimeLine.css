@@ -1,57 +1,106 @@
-.timeline-section {
-  background: #fff;
-  padding: 80px 20px;
+/* ===== Journey Section ===== */
+
+.journey-section {
+  background: #f6f7f8;
+  padding: 90px 20px;
 }
 
-.timeline-title {
+.journey-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #007bff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 60px;
 }
 
-.timeline {
-  position: relative;
-  max-width: 800px;
+/* ===== Card Layout ===== */
+
+.journey-list {
+  max-width: 820px;
   margin: 0 auto;
-  padding-left: 20px;
-  border-left: 3px solid #007bff;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 40px;
+.journey-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px 30px;
+  border: 1px solid #e4e6e8;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.timeline-dot {
-  width: 14px;
-  height: 14px;
-  background-color: #007bff;
-  border-radius: 50%;
-  position: absolute;
-  left: -9px;
-  top: 4px;
+.journey-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.timeline-content {
-  margin-left: 20px;
-  background: #f4f6f8;
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+/* ===== Year Badge ===== */
+
+.journey-year {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #303236;
+  background: rgba(47, 111, 237, 0.08);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 
-.timeline-content:hover {
-  transform: translateY(-4px);
+/* ===== Text ===== */
+
+.journey-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f1f1f;
+  margin: 0 0 10px 0;
 }
 
-.timeline-year {
-  font-size: 0.9rem;
-  color: #666;
+.journey-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5f6368;
+  margin: 0;
 }
 
-.timeline-heading {
-  font-size: 1.2rem;
-  margin: 4px 0;
-  color: #333;
+/* ===== Hover (Very Subtle) ===== */
+
+.journey-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+  border-color: rgba(47, 111, 237, 0.15);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+  .journey-section {
+    padding: 70px 16px;
+  }
+
+  .journey-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .journey-card {
+    padding: 22px 20px;
+  }
+
+  .journey-heading {
+    font-size: 1.05rem;
+  }
+
+  .journey-description {
+    font-size: 0.9rem;
+  }
 }
