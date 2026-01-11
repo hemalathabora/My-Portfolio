@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./AboutTimeline.css";
+import "./AboutTimeLine.css";
 
 export default function AboutTimeline() {
   const [visible, setVisible] = useState({});
