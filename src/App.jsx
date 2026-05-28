@@ -159,7 +159,7 @@ function App() {
               description:
                 "An AI-driven adaptive autism screening assistant that provides logical assessment, severity analysis, and downloadable medical-style reports.",
               github: "https://github.com/hemalathabora/NeuroMate-ASD",
-              live: "https://morphshield-ai.onrender.com/"
+              live: "https://neuro-mate.vercel.app/"
             },
             {
               title: "Instant Blood Donors",
