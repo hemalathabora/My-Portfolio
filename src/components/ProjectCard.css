@@ -1,118 +1,121 @@
-/* ===== Project Card Wrapper ===== */
+/* ============================
+   Project Card
+============================ */
 
 .project-card {
-  width: 300px;
-  height: 220px;
+  width: 100%;
+  max-width: 330px;
+  height: 240px;
   perspective: 1200px;
   cursor: pointer;
+  margin: 0 auto;
 }
-
-/* ===== Inner Flip Container ===== */
 
 .card-inner {
   width: 100%;
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  border-radius: 14px;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 16px;
 }
 
 .project-card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
-/* ===== Front & Back Shared ===== */
+/* ============================
+   Card Faces
+============================ */
 
 .card-front,
 .card-back {
   position: absolute;
   inset: 0;
-  backface-visibility: hidden;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
+  backface-visibility: hidden;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Front Side ===== */
+/* ============================
+   Front
+============================ */
 
 .card-front {
-  background: linear-gradient(
-    135deg,
-    #0f0f0f 0%,
-    #2a2a2a 100%
-  );
-  color: #ffffff;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
 }
 
 .project-image {
   width: 100%;
-  height: 130px;
+  height: 150px;
   object-fit: cover;
-  
 }
 
 .project-title {
-  margin-top: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin: 14px 10px 6px;
   text-align: center;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .flip-hint {
-  margin-top: 8px;
   font-size: 0.75rem;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-/* ===== Back Side ===== */
+/* ============================
+   Back
+============================ */
 
 .card-back {
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f1f1f1 100%
-  );
-  color: #1f1f1f;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
   transform: rotateY(180deg);
+  color: #222;
   padding: 18px;
   text-align: center;
 }
 
 .project-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 18px;
-  color: #4a4a4a;
+  color: #555;
 }
-
-/* ===== Links ===== */
 
 .project-links {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 14px;
 }
 
 .project-links a {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #f4f2f2;
+  background: #ececec;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+
+  transition: 0.3s ease;
 }
 
 .project-links a:hover {
-  background: #000000;
-  transform: translateY(-2px);
+  background: #111827;
+  transform: translateY(-3px);
 }
 
 .project-links img {
@@ -121,90 +124,105 @@
   filter: invert(1);
 }
 
-/* ===== Responsive ===== */
+/* ============================
+   Large Desktop (4 Columns)
+============================ */
 
-/* Tablet (641px - 1024px) */
-@media (max-width: 1024px) {
+@media (min-width: 1600px) {
   .project-card {
-    width: 100%;
-    max-width: 280px;
-    height: 220px;
-    margin: 0 auto;
+    max-width: 320px;
+    height: 245px;
   }
 }
 
-/* Mobile (641px - 768px) */
-@media (max-width: 768px) {
+/* ============================
+   Laptop (3 Columns)
+============================ */
+
+@media (max-width: 1366px) {
   .project-card {
-    width: 100%;
-    max-width: 270px;
-    height: 220px;
-    margin: 0 auto;
+    max-width: 100%;
+    height: 235px;
   }
 
   .project-image {
-    height: 120px;
+    height: 145px;
+  }
+}
+
+/* ============================
+   Tablet (2 Columns)
+============================ */
+
+@media (max-width: 992px) {
+  .project-card {
+    max-width: 340px;
+    height: 235px;
+  }
+
+  .project-image {
+    height: 140px;
   }
 
   .project-title {
     font-size: 1rem;
-    margin-top: 10px;
-  }
-
-  .flip-hint {
-    font-size: 0.7rem;
-  }
-
-  .card-back {
-    padding: 16px;
   }
 
   .project-description {
-    font-size: 0.85rem;
-    margin-bottom: 14px;
-  }
-
-  .project-links {
-    gap: 16px;
-  }
-
-  .project-links a {
-    width: 32px;
-    height: 32px;
+    font-size: 0.87rem;
   }
 }
 
-/* Small Mobile (≤ 640px) */
-@media (max-width: 640px) {
+/* ============================
+   Mobile (1 Column)
+============================ */
+
+@media (max-width: 768px) {
   .project-card {
+    max-width: 360px;
     width: 100%;
-    max-width: 280px;
-    height: 200px;
-    margin: 0 auto;
+    height: 230px;
   }
 
   .project-image {
-    height: 110px;
+    height: 135px;
   }
 
   .project-title {
-    font-size: 0.95rem;
-    margin-top: 8px;
-    padding: 0 8px;
+    font-size: 0.98rem;
   }
 
-  .flip-hint {
-    font-size: 0.65rem;
+  .project-description {
+    font-size: 0.84rem;
+    line-height: 1.45;
   }
 
-  .card-back {
-    padding: 14px;
+  .project-links a {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ============================
+   Small Mobile
+============================ */
+
+@media (max-width: 480px) {
+  .project-card {
+    max-width: 100%;
+    height: 220px;
+  }
+
+  .project-image {
+    height: 125px;
+  }
+
+  .project-title {
+    font-size: 0.92rem;
   }
 
   .project-description {
     font-size: 0.8rem;
-    line-height: 1.4;
-    margin-bottom: 12px;
   }
 
   .project-links {
@@ -212,8 +230,7 @@
   }
 
   .project-links a {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
+    width: 34px;
+    height: 34px;
   }
 }
