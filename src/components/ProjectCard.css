@@ -1,11 +1,12 @@
-/* ============================
-   Project Card
-============================ */
+/* =====================================================
+   PROJECT CARD
+===================================================== */
 
 .project-card {
   width: 100%;
-  max-width: 330px;
-  height: 240px;
+  max-width: 340px;
+  min-width: 280px;
+  height: 245px;
   perspective: 1200px;
   cursor: pointer;
   margin: 0 auto;
@@ -24,9 +25,9 @@
   transform: rotateY(180deg);
 }
 
-/* ============================
-   Card Faces
-============================ */
+/* =====================================================
+   FRONT & BACK
+===================================================== */
 
 .card-front,
 .card-back {
@@ -38,15 +39,13 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
-/* ============================
-   Front
-============================ */
+/* =====================================================
+   FRONT
+===================================================== */
 
 .card-front {
   background: linear-gradient(135deg, #111827, #1f2937);
@@ -55,41 +54,53 @@
 
 .project-image {
   width: 100%;
-  height: 150px;
+  height: 155px;
   object-fit: cover;
 }
 
 .project-title {
-  margin: 14px 10px 6px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+
   text-align: center;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.35;
 }
 
 .flip-hint {
+  margin-bottom: 12px;
   font-size: 0.75rem;
   opacity: 0.75;
 }
 
-/* ============================
-   Back
-============================ */
+/* =====================================================
+   BACK
+===================================================== */
 
 .card-back {
-  background: linear-gradient(135deg, #ffffff, #f7f7f7);
-  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
   color: #222;
+  transform: rotateY(180deg);
   padding: 18px;
-  text-align: center;
 }
 
 .project-description {
   flex: 1;
+
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 0.88rem;
   line-height: 1.5;
+
   color: #555;
 }
 
@@ -97,12 +108,13 @@
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .project-links a {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+
   border-radius: 50%;
   background: #ececec;
 
@@ -110,7 +122,7 @@
   align-items: center;
   justify-content: center;
 
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .project-links a:hover {
@@ -124,113 +136,90 @@
   filter: invert(1);
 }
 
-/* ============================
-   Large Desktop (4 Columns)
-============================ */
+/* =====================================================
+   LARGE DESKTOP (4 Cards)
+===================================================== */
 
-@media (min-width: 1600px) {
+@media (min-width: 1440px) {
+
   .project-card {
     max-width: 320px;
     height: 245px;
   }
+
 }
 
-/* ============================
-   Laptop (3 Columns)
-============================ */
+/* =====================================================
+   LAPTOP (3 Cards)
+===================================================== */
 
-@media (max-width: 1366px) {
-  .project-card {
-    max-width: 100%;
-    height: 235px;
+@media (min-width:1025px) and (max-width:1439px){
+
+  .project-card{
+    max-width:330px;
+    height:240px;
   }
 
-  .project-image {
-    height: 145px;
-  }
 }
 
-/* ============================
-   Tablet (2 Columns)
-============================ */
+/* =====================================================
+   TABLET (2 Cards)
+===================================================== */
 
-@media (max-width: 992px) {
-  .project-card {
-    max-width: 340px;
-    height: 235px;
+@media (min-width:641px) and (max-width:1024px){
+
+  .project-card{
+    max-width:320px;
+    height:235px;
   }
 
-  .project-image {
-    height: 140px;
+  .project-image{
+    height:145px;
   }
 
-  .project-title {
-    font-size: 1rem;
+  .project-title{
+    font-size:1rem;
   }
 
-  .project-description {
-    font-size: 0.87rem;
+  .project-description{
+    font-size:0.85rem;
   }
+
 }
 
-/* ============================
-   Mobile (1 Column)
-============================ */
+/* =====================================================
+   MOBILE
+===================================================== */
 
-@media (max-width: 768px) {
-  .project-card {
-    max-width: 360px;
-    width: 100%;
-    height: 230px;
+@media (max-width:640px){
+
+  .project-card{
+    width:100%;
+    max-width:360px;
+    height:225px;
   }
 
-  .project-image {
-    height: 135px;
+  .project-image{
+    height:135px;
   }
 
-  .project-title {
-    font-size: 0.98rem;
+  .project-title{
+    font-size:0.95rem;
+    padding:10px;
   }
 
-  .project-description {
-    font-size: 0.84rem;
-    line-height: 1.45;
+  .project-description{
+    font-size:0.82rem;
+    line-height:1.45;
   }
 
-  .project-links a {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-/* ============================
-   Small Mobile
-============================ */
-
-@media (max-width: 480px) {
-  .project-card {
-    max-width: 100%;
-    height: 220px;
+  .project-links{
+    gap:14px;
   }
 
-  .project-image {
-    height: 125px;
+  .project-links a{
+    width:36px;
+    height:36px;
   }
 
-  .project-title {
-    font-size: 0.92rem;
-  }
-
-  .project-description {
-    font-size: 0.8rem;
-  }
-
-  .project-links {
-    gap: 14px;
-  }
-
-  .project-links a {
-    width: 34px;
-    height: 34px;
-  }
 }
