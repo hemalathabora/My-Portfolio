@@ -163,7 +163,7 @@ function App() {
             },
             {
               title: "MorphShield-AI –   Face Morphing Attack Detection for KYC",
-              image: "https://thedatascientist.com/face-verification-enhancing-customer-experience-and-data-security/",
+              image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7s2KMhfziBIF7oHXeCG4P4UQYpSBBNvVxFFekMCfF-jvPmvik_lbxNk&s=10",
               description:
                 "Explainable AI-powered biometric security system that detects potential face morphing attacks using facial symmetry and texture analysis for secure KYC verification.",
               github: "https://github.com/hemalathabora/MorphShield-AI",
