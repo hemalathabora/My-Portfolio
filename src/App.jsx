@@ -162,6 +162,15 @@ function App() {
               live: "https://neuro-mate.vercel.app/"
             },
             {
+              title: "MorphShield-AI –   Face Morphing Attack Detection for KYC",
+              image: "https://thedatascientist.com/face-verification-enhancing-customer-experience-and-data-security/",
+              description:
+                "Explainable AI-powered biometric security system that detects potential face morphing attacks using facial symmetry and texture analysis for secure KYC verification.",
+              github: "https://github.com/hemalathabora/MorphShield-AI",
+              live: "https://morphshield-ai.onrender.com/"
+            },
+            
+            {
               title: "Instant Blood Donors",
               image: "/assets/icons/ibd.jpg",
               description:
